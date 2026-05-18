@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smith Reliance Group | General Contractors</title>
+  <style>
+    :root{
+      --red:#d71920;
+      --red-dark:#a90f15;
+      --navy:#071322;
+      --navy-2:#0d1d2d;
+      --ink:#101820;
+      --muted:#64748b;
+      --light:#f6f8fb;
+      --white:#fff;
+      --line:#e6e9ef;
+      --shadow:0 22px 60px rgba(7,19,34,.18);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial, Helvetica, sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;border:0;border-radius:4px;padding:15px 22px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 12px 24px rgba(215,25,32,.25);transition:.2s}
+    .btn:hover{transform:translateY(-2px);background:var(--red-dark)}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,.55);box-shadow:none}
+    .btn.light{background:#fff;color:var(--red)}
+    .eyebrow{color:var(--red);font-size:13px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .section-title{text-align:center;margin-bottom:34px}
+    .section-title h2{font-size:clamp(28px,4vw,42px);line-height:1.1;color:var(--navy)}
+
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(0,0,0,.04)}
+    .nav{height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:250px}
+    .logo-mark{font-size:44px;font-weight:950;letter-spacing:-.08em;color:#000;line-height:.8}
+    .logo-roof{width:82px;height:34px;border-bottom:8px solid var(--red);border-left:8px solid var(--red);transform:skewX(-28deg);margin-top:-4px;position:relative}
+    .logo-roof:after{content:"";position:absolute;left:30px;bottom:-8px;width:8px;height:38px;background:var(--red);transform:skewX(28deg)}
+    .logo-text small{font-weight:900;color:#000;display:block;font-size:13px;line-height:1.1}
+    .logo-text span{display:block;font-size:11px;font-weight:800;text-transform:uppercase;color:#111;white-space:nowrap}
+    nav{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:900;text-transform:uppercase}
+    nav a{position:relative;padding:34px 0}
+    nav a:hover,nav a.active{color:var(--red)}
+    nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:20px;height:3px;background:var(--red)}
+    .mobile-toggle{display:none;background:none;border:0;font-size:28px;color:var(--navy)}
+
+    .hero{background:var(--navy);color:#fff;overflow:hidden}
+    .hero-wrap{display:grid;grid-template-columns:1fr 1.15fr;min-height:560px;align-items:stretch}
+    .hero-copy{position:relative;z-index:2;padding:82px 0 70px;background:linear-gradient(115deg,var(--navy) 0%,var(--navy) 72%,transparent 72%)}
+    .hero-copy-inner{width:min(560px,92%);margin-left:max(4vw,calc((100vw - 1180px)/2));padding-right:44px}
+    .hero h1{font-size:clamp(42px,5vw,64px);line-height:1.04;margin:18px 0 18px;font-weight:950;letter-spacing:-.04em}
+    .hero h1 span{color:var(--red)}
+    .hero p{font-size:18px;color:#dbe5ef;margin-bottom:28px;max-width:520px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+    .service-area-tag{display:flex;gap:12px;align-items:center;color:#fff;font-weight:700}
+    .pin{font-size:34px;color:#fff}
+    .hero-image{background:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url("images/SRG10.png") center/cover no-repeat;min-height:560px}
+
+    .trust-bar{background:#081828;color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .trust-item{display:flex;gap:16px;align-items:center;padding:25px 20px;border-right:1px solid rgba(255,255,255,.18)}
+    .trust-item:last-child{border-right:0}
+    .trust-icon{font-size:34px;color:#fff}
+    .trust-item strong{display:block;text-transform:uppercase;font-size:13px}
+    .trust-item span{display:block;color:#d8e0ea;font-size:14px}
+
+    section{padding:70px 0}
+    .services{background:#fff}
+    .services-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .service-card{background:#fff;border:1px solid var(--line);box-shadow:0 12px 34px rgba(7,19,34,.08);border-radius:6px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-card img{height:150px;width:100%;object-fit:cover}
+    .service-body{padding:18px;position:relative;flex:1}
+    .service-icon{width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;margin-top:-43px;margin-bottom:16px;font-size:23px;border:3px solid #fff}
+    .service-body h3{font-size:16px;text-transform:uppercase;margin-bottom:10px;color:var(--navy)}
+    .service-body p{font-size:14px;color:#4b5563;margin-bottom:18px}
+    .learn{font-size:13px;color:var(--red);font-weight:900;text-transform:uppercase;margin-top:auto}
+
+    .projects{background:linear-gradient(180deg,#071322,#0d1d2d);color:#fff}
+    .projects .section-title h2{color:#fff}
+    .project-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px}
+    .project-tile{height:190px;position:relative;overflow:hidden;border-radius:3px;background:#111}
+    .project-tile img{width:100%;height:100%;object-fit:cover;transition:.35s;opacity:.92}
+    .project-tile:hover img{transform:scale(1.07);opacity:1}
+    .project-tile span{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.72);color:#fff;padding:7px 10px;border-radius:4px;font-size:12px;font-weight:800}
+    .center{text-align:center;margin-top:28px}
+
+    .split{display:grid;grid-template-columns:1fr 1fr 1fr;gap:34px;align-items:start}
+    .why ul{list-style:none;margin-top:18px}
+    .why li{margin:11px 0;color:#263445;font-size:15px}
+    .why li:before{content:"✓";color:#fff;background:var(--red);border-radius:50%;font-weight:900;margin-right:10px;padding:1px 5px;font-size:12px}
+    .testimonial{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:8px;padding:28px;min-height:210px}
+    .quote-mark{font-size:54px;color:var(--red);line-height:.8}
+    .stars{color:#f5b301;margin-top:12px}
+    .area-card{background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:28px;min-height:210px;position:relative;overflow:hidden}
+    .area-list{margin-top:18px;color:#263445;font-weight:700;line-height:2}
+    .area-shape{position:absolute;right:-30px;bottom:-38px;width:150px;height:150px;background:rgba(215,25,32,.16);clip-path:polygon(47% 0,100% 28%,79% 100%,8% 78%,0 23%)}
+
+    .cta{padding:34px 0;background:linear-gradient(90deg,var(--red-dark),var(--red));color:#fff}
+    .cta .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .cta h2{font-size:32px;line-height:1.1;margin-bottom:4px}
+    .cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+    footer{background:#06111f;color:#cbd5e1;padding:34px 0;font-size:14px}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    .modal{position:fixed;inset:0;background:rgba(3,8,15,.72);z-index:90;display:none;align-items:center;justify-content:center;padding:20px}
+    .modal.open{display:flex}
+    .quote-panel{width:min(760px,96vw);background:#fff;border-radius:12px;box-shadow:0 30px 100px rgba(0,0,0,.35);overflow:hidden}
+    .quote-head{background:var(--navy);color:#fff;padding:22px 26px;display:flex;justify-content:space-between;align-items:center}
+    .close{background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+    .quote-body{padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .quote-body label{font-size:12px;font-weight:900;text-transform:uppercase;color:#64748b}
+    .quote-body input,.quote-body select,.quote-body textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:13px;margin-top:6px;font:inherit}
+    .quote-body textarea{min-height:100px;grid-column:1/-1}
+    .full{grid-column:1/-1}
+    .quote-success{display:none;margin:0 26px 26px;background:#ecfdf5;color:#065f46;border:1px solid #bbf7d0;border-radius:6px;padding:14px;font-weight:800}
+
+    .chat-fab{position:fixed;right:24px;bottom:24px;width:64px;height:64px;border-radius:50%;background:var(--red);color:#fff;border:0;box-shadow:0 16px 34px rgba(215,25,32,.35);font-size:28px;z-index:70;cursor:pointer}
+    .chat-box{position:fixed;right:24px;bottom:98px;width:340px;max-width:calc(100vw - 32px);background:#fff;border-radius:10px;box-shadow:0 20px 70px rgba(0,0,0,.28);z-index:70;overflow:hidden;display:none}
+    .chat-box.open{display:block}
+    .chat-header{background:var(--red);color:#fff;padding:14px 16px;font-weight:900;display:flex;justify-content:space-between;align-items:center}
+    .chat-messages{padding:16px;background:#f8fafc;max-height:330px;overflow:auto}
+    .bot,.user{padding:11px 13px;border-radius:12px;margin:8px 0;font-size:14px;line-height:1.4}
+    .bot{background:#fff;border:1px solid var(--line);color:#1f2937}
+    .user{background:var(--navy);color:#fff;margin-left:36px}
+    .quick{display:grid;gap:8px;padding:0 16px 16px;background:#f8fafc}
+    .quick button{background:#fff;color:var(--red);border:1px solid #fecaca;border-radius:6px;padding:10px;font-weight:800;cursor:pointer}
+    .chat-input{display:flex;border-top:1px solid var(--line)}
+    .chat-input input{flex:1;border:0;padding:14px;font:inherit}
+    .chat-input button{border:0;background:var(--red);color:#fff;padding:0 16px;font-size:18px}
+
+    @media(max-width:980px){
+      .nav{height:auto;padding:16px 0;align-items:flex-start}
+      .mobile-toggle{display:block}
+      nav{display:none;position:absolute;left:0;right:0;top:86px;background:#fff;padding:16px 4%;box-shadow:0 20px 40px rgba(0,0,0,.12);flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}
+      nav a{padding:8px 0}
+      .hero-wrap{grid-template-columns:1fr}.hero-copy{background:linear-gradient(rgba(7,19,34,.92),rgba(7,19,34,.92));padding:58px 0}.hero-image{min-height:340px}
+      .trust-grid{grid-template-columns:1fr 1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.quote-body{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){.services-grid,.project-grid,.trust-grid{grid-template-columns:1fr}.hero-actions,.cta-actions{flex-direction:column}.btn{justify-content:center;width:100%}.brand{min-width:0}.logo-mark{font-size:36px}.logo-text span{font-size:9px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Smith Reliance Group home">
+        <div>
+          <div class="logo-mark">SRG</div>
+          <div class="logo-roof"></div>
+        </div>
+        <div class="logo-text">
+          <small>610-931-4320</small>
+          <small>267-265-3039</small>
+          <span>Cement, Roofing, General Home Repair</span>
+        </div>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle">☰</button>
+      <nav id="navLinks">
+        <a class="active" href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About Us</a>
+        <a href="#area">Service Area</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn" data-open-quote>📋 Request a Quote</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <div class="hero-copy-inner">
+            <div class="eyebrow">Reliable. Professional. Built Right.</div>
+            <h1>We Build. We Restore. <span>We Get It Done Right.</span></h1>
+            <p>Smith Reliance Group is your trusted partner for rehab, demo, renovations, hardscaping, landscaping, maintenance contracting, and clean outs.</p>
+            <div class="hero-actions">
+              <button class="btn" data-open-quote>📋 Request a Quote</button>
+              <a class="btn outline" href="tel:6109314320">☎ Call Now</a>
+            </div>
+            <div class="service-area-tag"><span class="pin">⌖</span> Proudly serving Philadelphia, Delaware & Montgomery County</div>
+          </div>
+        </div>
+        <div class="hero-image" aria-label="Completed kitchen renovation"></div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-item"><div class="trust-icon">♢</div><div><strong>Licensed & Insured</strong><span>Peace of mind on every job</span></div></div>
+        <div class="trust-item"><div class="trust-icon">♧</div><div><strong>Experienced Team</strong><span>Skilled professionals you can trust</span></div></div>
+        <div class="trust-item"><div class="trust-icon">☆</div><div><strong>Quality Workmanship</strong><span>We stand behind our work</span></div></div>
+        <div class="trust-item"><div class="trust-icon">◷</div><div><strong>On Time & On Budget</strong><span>We respect your investment</span></div></div>
+      </div>
+    </div>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title"><div class="eyebrow">Our Services</div><h2>Complete Solutions for Your Property</h2></div>
+        <div class="services-grid">
+          <article class="service-card"><img src="images/SRG4.png" alt="Renovation framing"><div class="service-body"><div class="service-icon">⌂</div><h3>Rehab & Renovations</h3><p>From kitchens to full home renovations, we bring your vision to life.</p><div class="learn">Learn More →</div></div></article>
+          <article class="service-card"><img src="images/SRG3.png" alt="Demolition work"><div class="service-body"><div class="service-icon">◿</div><h3>Demolition</h3><p>Safe, efficient demo services for residential and commercial projects.</p><div class="learn">Learn More →</div></div></article>
+          <article class="service-card"><img src="images/SRG1.png" alt="Concrete work"><div class="service-body"><div class="service-icon">▦</div><h3>Hardscaping</h3><p>Concrete patios, walkways, retaining walls, and more built to last.</p><div class="learn">Learn More →</div></div></article>
+          <article class="service-card"><img src="images/SRG2.png" alt="Wall repair"><div class="service-body"><div class="service-icon">♧</div><h3>Landscaping</h3><p>Outdoor spaces designed, maintained, and cleaned up with care.</p><div class="learn">Learn More →</div></div></article>
+          <article class="service-card"><img src="images/SRG1.png" alt="Maintenance work"><div class="service-body"><div class="service-icon">🔧</div><h3>Maintenance</h3><p>Ongoing property maintenance to keep your space in top shape.</p><div class="learn">Learn More →</div></div></article>
+          <article class="service-card"><img src="images/SRG7.png" alt="Kitchen before clean out"><div class="service-body"><div class="service-icon">♻</div><h3>Clean Outs</h3><p>Junk removal, property clean outs, and haul-away services.</p><div class="learn">Learn More →</div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-title"><div class="eyebrow">Recent Projects</div><h2>Quality Work You Can See</h2></div>
+        <div class="project-grid">
+          <div class="project-tile"><img src="images/SRG1.png" alt="Exterior repair"><span>Exterior Repair</span></div>
+          <div class="project-tile"><img src="images/SRG8.png" alt="Interior renovation"><span>Interior Rehab</span></div>
+          <div class="project-tile"><img src="images/SRG6.png" alt="Completed kitchen"><span>Kitchen Remodel</span></div>
+          <div class="project-tile"><img src="images/SRG2.png" alt="Wall repair"><span>Wall Restoration</span></div>
+          <div class="project-tile"><img src="images/SRG10.png" alt="Modern finished kitchen"><span>Finished Kitchen</span></div>
+        </div>
+        <div class="center"><button class="btn" data-scroll-services>View Services</button></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="why">
+          <div class="eyebrow">Why Choose SRG?</div>
+          <h2>A Contractor You Can Count On</h2>
+          <ul>
+            <li>Full-service general contractor</li>
+            <li>High-quality materials & craftsmanship</li>
+            <li>Transparent communication</li>
+            <li>Competitive pricing</li>
+            <li>Satisfaction guaranteed</li>
+          </ul>
+        </div>
+        <div class="testimonial" id="reviews">
+          <div class="eyebrow">What Our Clients Say</div>
+          <div class="quote-mark">“</div>
+          <p>SRG did an amazing job on our kitchen renovation. They were professional, on time, and the quality of work exceeded our expectations. Highly recommend!</p>
+          <p style="margin-top:16px;font-weight:900">– John D. <span class="stars">★★★★★</span></p>
+        </div>
+        <div class="area-card" id="area">
+          <div class="eyebrow">Service Area</div>
+          <h2>Local, Reliable, Ready</h2>
+          <div class="area-list">Philadelphia County<br>Delaware County<br>Montgomery County</div>
+          <div class="area-shape"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container">
+        <div><h2>Ready to Start Your Project?</h2><p>Contact SRG today for a free, no-obligation estimate.</p></div>
+        <div class="cta-actions"><button class="btn light" data-open-quote>📋 Request a Quote</button><a class="btn outline" href="tel:6109314320">☎ 610-931-4320</a><a class="btn outline" href="tel:2672653039">☎ 267-265-3039</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Smith Reliance Group</strong><br>Rehab, demo, renovations, hardscaping, landscaping, maintenance contractors, and clean outs.</div>
+      <div>Serving Philadelphia, Delaware & Montgomery County</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="quoteModal">
+    <div class="quote-panel">
+      <div class="quote-head"><h2>Request a Quote</h2><button class="close" id="closeQuote">×</button></div>
+      <form class="quote-body" id="quoteForm">
+        <div><label>Name<input required placeholder="Your name"></label></div>
+        <div><label>Phone<input required placeholder="Best phone number"></label></div>
+        <div><label>Email<input type="email" placeholder="Email address"></label></div>
+        <div><label>Service Needed<select required><option value="">Choose one</option><option>Rehab / Renovation</option><option>Demolition</option><option>Hardscaping</option><option>Landscaping</option><option>Maintenance</option><option>Clean Out</option><option>Other</option></select></label></div>
+        <div><label>County<select><option>Philadelphia County</option><option>Delaware County</option><option>Montgomery County</option><option>Other</option></select></label></div>
+        <div><label>Timeline<select><option>ASAP</option><option>Within 30 days</option><option>1-3 months</option><option>Planning / pricing</option></select></label></div>
+        <label class="full">Project Details<textarea placeholder="Tell us about the project, location, and any photos you can provide."></textarea></label>
+        <button class="btn full" type="submit">Submit Sample Quote Request</button>
+      </form>
+      <div class="quote-success" id="quoteSuccess">Sample quote request received. In the live build, this would send to SRG by email/text and store the lead.</div>
+    </div>
+  </div>
+
+  <button class="chat-fab" id="chatFab">💬</button>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">SRG Assistant <button class="close" id="chatClose">×</button></div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="bot">Hi! I’m here to help with your project. What can I help you with today?</div>
+    </div>
+    <div class="quick">
+      <button data-question="What services do you offer?">What services do you offer?</button>
+      <button data-question="Do you provide free estimates?">Do you provide free estimates?</button>
+      <button data-question="What areas do you serve?">What areas do you serve?</button>
+      <button data-question="How long will my project take?">How long will my project take?</button>
+    </div>
+    <div class="chat-input"><input id="chatInput" placeholder="Type your message..."><button id="sendChat">➤</button></div>
+  </div>
+
+<script>
+  const navToggle=document.getElementById('mobileToggle');
+  const navLinks=document.getElementById('navLinks');
+  navToggle?.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+  const quoteModal=document.getElementById('quoteModal');
+  document.querySelectorAll('[data-open-quote]').forEach(btn=>btn.addEventListener('click',()=>quoteModal.classList.add('open')));
+  document.getElementById('closeQuote').addEventListener('click',()=>quoteModal.classList.remove('open'));
+  quoteModal.addEventListener('click',e=>{if(e.target===quoteModal)quoteModal.classList.remove('open')});
+  document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('quoteSuccess').style.display='block';e.target.reset();});
+  document.querySelector('[data-scroll-services]')?.addEventListener('click',()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}));
+
+  const chatFab=document.getElementById('chatFab');
+  const chatBox=document.getElementById('chatBox');
+  const chatClose=document.getElementById('chatClose');
+  const chatMessages=document.getElementById('chatMessages');
+  const chatInput=document.getElementById('chatInput');
+  const sendChat=document.getElementById('sendChat');
+  chatFab.addEventListener('click',()=>chatBox.classList.toggle('open'));
+  chatClose.addEventListener('click',()=>chatBox.classList.remove('open'));
+  const answers={
+    'What services do you offer?':'SRG handles rehab, demo, renovations, hardscaping, landscaping, maintenance contracting, concrete, roofing, general home repair, and clean outs.',
+    'Do you provide free estimates?':'Yes. Use the Request a Quote button and SRG will review your project details and follow up.',
+    'What areas do you serve?':'SRG proudly serves Philadelphia County, Delaware County, and Montgomery County.',
+    'How long will my project take?':'Timelines depend on project size, permits, materials, and scope. A small repair may be quick, while renovations require a full estimate and schedule.'
+  };
+  function addMessage(text,type='bot'){
+    const div=document.createElement('div');div.className=type;div.textContent=text;chatMessages.appendChild(div);chatMessages.scrollTop=chatMessages.scrollHeight;
+  }
+  function respond(text){
+    addMessage(text,'user');
+    setTimeout(()=>addMessage(answers[text] || 'Thanks for reaching out. For the fastest help, click Request a Quote and share your project details, photos, location, and timeline.'),450);
+  }
+  document.querySelectorAll('[data-question]').forEach(btn=>btn.addEventListener('click',()=>respond(btn.dataset.question)));
+  sendChat.addEventListener('click',()=>{const text=chatInput.value.trim();if(!text)return;chatInput.value='';respond(text)});
+  chatInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendChat.click()});
+</script>
+</body>
+</html>
